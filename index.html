@@ -58,15 +58,20 @@
     <nav class="navbar navbar-secondary bg-secondary">
       <div class="container-fluid">
         <h1>Products</h1>
-        <form class="d-flex">
-          <input
-            class="form-control me-2 text-right"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-info" type="submit">Search</button>
-        </form>
+        <input
+          id="search-input"
+          class="form-control me-2 text-right"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-info"
+          type="button"
+          onclick="viewManager.loadFilteredProducts()"
+        >
+          Search
+        </button>
       </div>
     </nav>
     <!-- Add Product cards -->
@@ -75,28 +80,30 @@
       <div class="row" id="products-container"></div>
     </div>
 
-    <table class="table container table-bordered mt-5">
+    <table id="cart-summary" class="table container table-bordered mt-5">
       <h1>Cart Details</h1>
+      <!-- summary items table will create here -->
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col" style="width: 40%">Item Name</th>
+          <th scope="col" style="width: 10%">Quantity</th>
+          <th scope="col" style="width: 20%">Price</th>
+          <th scope="col" style="width: 20%">Line Total</th>
+          <th scope="col" style="width: 10%">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
+        <!-- Summary details rows  are dynamically  generated -->
       </tbody>
+    </table>
+
+    <table id="summary-table" class="table container table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 70%">Grand Total</th>
+          <th scope="col" style="width: 30%" id="grand-total"></th>
+        </tr>
+      </thead>
     </table>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -128,10 +135,25 @@
           min="0"
           class="form-control"
         />
-        <button id="btn-add-to-cart" type="submit" onclick="viewManager.addToCart(this)" class="btn btn-success mt-2">
+        <button
+          id="btn-add-to-cart"
+          type="submit"
+          onclick="viewManager.addToCart(this); viewManager.loadCartSummaryDetails();"
+          class="btn btn-success mt-2"
+        >
           Add To Cart
         </button>
       </div>
     </div>
+  </template>
+
+  <template id="cart-row">
+    <tr>
+      <td class="cart-details"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
   </template>
 </html>

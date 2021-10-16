@@ -1,11 +1,16 @@
 class Pricecalculator {
-    calculateTotalPrice(cartItems, prodCatalogManager) {
+    #prodCatalogManager;
+    constructor(prodCatalogManager){
+        this.#prodCatalogManager = prodCatalogManager;
+    }
+
+    calculateTotalPrice(cartItems) {
         let priceCalculatedItems = [];
         let grandTotal = 0;
 
-        if (cartItems != undefined && prodCatalogManager != undefined) {
+        if (cartItems != undefined && this.#prodCatalogManager != undefined) {
             cartItems.forEach(item => {
-                let lineTotal = prodCatalogManager.getPrice(item.id) * item.quantity;
+                let lineTotal = this.#prodCatalogManager.getPrice(item.id) * item.quantity;
                 priceCalculatedItems.push({
                     id: item.id,
                     quantity: item.quantity,

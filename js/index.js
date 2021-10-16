@@ -23,12 +23,10 @@ products = [
 const prodCatalogManager = new ProductCatalogManager(products);
 
 const cartManager = new CartManager();
-cartManager.updateCartItem(1, 3);
-cartManager.updateCartItem(2, 8);
 
-const priceCalculator = new Pricecalculator();
-let output = priceCalculator.calculateTotalPrice(cartManager.cartItems, prodCatalogManager);
+const priceCalculator = new Pricecalculator(prodCatalogManager);
 
-const viewManager = new ViewManager();
-viewManager.loadProducts(prodCatalogManager);
+const viewManager = new ViewManager(prodCatalogManager,cartManager,priceCalculator);
+viewManager.loadProducts();
+viewManager.loadCartSummaryDetails();
 
