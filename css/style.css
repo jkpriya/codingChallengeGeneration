@@ -1,0 +1,31 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+#search-input{
+    align-self: auto;
+}
+#cart-header{
+    text-align: left;
+    margin-top: 2%;
+    padding:1%;
+    border-bottom: 1px solid rgb(212, 210, 210);
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+h1{
+    font-family: fantasy;
+    color:white;
+    letter-spacing:3px ;
+    font-style: italic;
+
+}
+.navbar{
+    background-color:slateblue;
+}
+h5{
+    color: red;
+    font-weight: bold;
+    text-align: right;
+}
