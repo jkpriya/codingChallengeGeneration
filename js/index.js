@@ -35,6 +35,18 @@ products = [
         name: "Apple iPad Pro 11-inch 128GB Wi-Fi",
         price: 1199,
     },
+    {
+        id: 7,
+        img: "./images/AppleWatch.jpg",
+        name: "Apple Watch Series 3 38mm Space Grey ",
+        price: 299,
+    },
+    {
+        id: 8,
+        img: "./images/OpelMobile.jpg",
+        name: "Opel Mobile 4G EasySmart 2 Phone",
+        price: 149,
+    },
 ]
 
 
@@ -47,4 +59,10 @@ const priceCalculator = new Pricecalculator(prodCatalogManager);
 const viewManager = new ViewManager(prodCatalogManager,cartManager,priceCalculator);
 viewManager.loadProducts();
 viewManager.loadCartSummaryDetails();
+
+//Demonstration of using clone
+// var a = cartManager.cartItems;
+// a.push({id: 9, quantity: 5});
+// console.log(cartManager.cartItems);
+// console.log(a);
 
