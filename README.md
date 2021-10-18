@@ -11,20 +11,20 @@
 
  1. ### Display products:
     - The products[] array is hard coded and when the webpage loaded all the product details are sent to `class ProductCatalogManager` and rendered by the `loadProducts()` function in a`class ViewManager`.
-    ![Image of Products loaded](./images/screenshot1.JPG)
+    ![Image of Products loaded](./images/screenshot1.jpg)
 
 2. ### Search Products :
     - User can search the product they want using search textbox and the filtered products[] array is displaced.
     ` loadFilteredProducts()` method in a `class ViewManager` render the filtered products.
-    ![Image of searched Products loaded](./images/screenshot2.JPG)
+    ![Image of searched Products loaded](./images/screenshot2.jpg)
 
 3. ### Add To Cart:
     - The user can select a no of item and add it to cart by clicking `Add to Cart` button .The product added and all the details are displaced in the cart summary table below.
-    ![Image of cart details](./images/screenshot3.JPG)
+    ![Image of cart details](./images/screenshot3.jpg)
 
 4. ### Remove():
     - `Remove` action remove the item from the cart.
-    ![Image of cart details](./images/screenshot4.JPG)
+    ![Image of cart details](./images/screenshot4.jpg)
 
 ## Technologies Used
 
